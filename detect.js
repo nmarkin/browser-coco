@@ -1,3 +1,4 @@
+
 class App extends React.Component {
   // reference to both the video and canvas
   videoRef = React.createRef();
@@ -82,7 +83,7 @@ class App extends React.Component {
 
       // define a Promise that'll be used to load the model
       const loadlModelPromise = cocoSsd.load();
-
+      
       // resolve all the Promises
       Promise.all([loadlModelPromise, webcamPromise])
         .then(values => {
@@ -98,7 +99,7 @@ class App extends React.Component {
   // so we are in someway drawing our video "on the go"
   render() {
     return (
-      <div>
+      <div> 
         <video
           style={this.styles}
           autoPlay
@@ -111,6 +112,7 @@ class App extends React.Component {
         <canvas style={this.styles} ref={this.canvasRef} width="720" height="650" />
       </div>
     );
+  }
 }
 
 const domContainer = document.querySelector('#root');
